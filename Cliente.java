@@ -1,6 +1,5 @@
 package ifood;
 
-import java.util.Objects;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -16,7 +15,8 @@ public class Cliente implements Pessoa, Observer {
         return nome;
     }
 
-    public void update(String estado) {
+    @Override
+    public void update(Observable estado, Object arg) {
         System.out.println("Cliente " + nome + " foi notificado: Pedido " + estado);
     }
 }
